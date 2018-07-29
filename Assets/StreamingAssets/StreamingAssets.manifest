@@ -1,0 +1,11 @@
+ManifestFileVersion: 0
+CRC: 776545491
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scene_1/materials.ab
+      Dependencies:
+        Dependency_0: scene_1/texture.ab
+    Info_1:
+      Name: scene_1/texture.ab
+      Dependencies: {}

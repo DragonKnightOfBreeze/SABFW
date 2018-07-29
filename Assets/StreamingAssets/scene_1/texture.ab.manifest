@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 3033550937
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 99785e07529acc766c0ab0c529f19413
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b474380d27eb4bc856799e9c585c4864
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABResources/Scene_1/Texture/Floor.jpg
+Dependencies: []

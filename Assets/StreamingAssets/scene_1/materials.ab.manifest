@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1051505692
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1d362bb5c50a384e4a1569a071fc7d2f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: abb9b9167ab0d9f4af2beeb617361f49
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/ABResources/Scene_1/Materials/New Material.mat
+Dependencies:
+- "D:/\uFF3BMy Documents\uFF3D/My Projects/Unity Projects/Tutorial/AssetBundleProject/SABFW/Assets/StreamingAssets/scene_1/texture.ab"
