@@ -1,6 +1,6 @@
 ﻿/*******
  * ［标题］
- * 项目：AssetBundle框架设计
+ * 项目：简单的AssetBundle框架
  * 作者：微风的龙骑士 风游迩
  * 
  * 路径工具类
@@ -38,24 +38,25 @@ namespace SABFW {
 		/// </summary>
 		/// <returns></returns>
 		public static string GetABInputPath(){
-			string path = string.Empty;
+			string path;
 
 			//得到路径
 			switch (Application.platform) {
 				case RuntimePlatform.WindowsEditor:
 				case RuntimePlatform.WindowsPlayer:
+				case RuntimePlatform.Android:
+				case RuntimePlatform.IPhonePlayer:
 					path = Application.dataPath + "/" + PATH_ABResources;
 					break;
 				default:
-					break;
+					throw new PlatformNotSupportedException(FWDefine.PREFIX + "不支持这个平台！");
 			}
 			return path;
 		}
 
 		/// <summary>
 		/// 得到AB资源的完整输出路径
-		/// 
-		/// 算法：1.平台的路径		2.平台的名称
+		/// 完整输出路径=平台的路径+平台的名称
 		/// </summary>
 		/// <returns></returns>
 		public static string GetABOutputPath(){
@@ -68,7 +69,7 @@ namespace SABFW {
 		/// </summary>
 		/// <returns></returns>
 		public static string GetPlatformPath(){
-			string platformPath = String.Empty;
+			string platformPath;
 			switch (Application.platform) {
 				case RuntimePlatform.WindowsEditor:
 				case RuntimePlatform.WindowsPlayer:
@@ -79,7 +80,7 @@ namespace SABFW {
 					platformPath = Application.persistentDataPath;
 					break;
 				default:
-					break;
+					throw new PlatformNotSupportedException(FWDefine.PREFIX + "不支持这个平台！");
 			}
 			return platformPath;
 		}
@@ -89,7 +90,7 @@ namespace SABFW {
 		/// </summary>
 		/// <returns></returns>
 		public static string GetPlatformName(){
-			string platformName = String.Empty;
+			string platformName;
 			switch (Application.platform) {
 				case RuntimePlatform.WindowsEditor:
 				case RuntimePlatform.WindowsPlayer:
@@ -102,7 +103,7 @@ namespace SABFW {
 					platformName = "Iphone";
 					break;
 				default:
-					break;
+					throw new PlatformNotSupportedException(FWDefine.PREFIX+"不支持这个平台！");
 			}
 			return platformName;
 		}
@@ -113,7 +114,7 @@ namespace SABFW {
 		/// </summary>
 		/// <returns></returns>
 		public static string GetWWWPath(){
-			string path = string.Empty;
+			string path;
 
 			switch (Application.platform) {
 				case RuntimePlatform.WindowsPlayer:
@@ -127,7 +128,7 @@ namespace SABFW {
 					path = GetABOutputPath() + "/Raw/";
 					break;
 				default:
-					break;
+					throw new PlatformNotSupportedException(FWDefine.PREFIX + "不支持这个平台！");
 			}
 			return path;
 		}

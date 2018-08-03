@@ -1,6 +1,6 @@
 ﻿/*******
  * ［标题］
- * 项目：AssetBundle框架设计
+ * 项目：简单的AssetBundle框架
  * 作者：微风的龙骑士 风游迩
  * 
  * 框架整体测试类
@@ -21,9 +21,9 @@ using UnityEngine;
 
 namespace SABFW {
 	/// <summary>
-	/// 测试：AssetBundleMgr
+	/// 测试：ABManager
 	/// </summary>
-	public class AssetBundleMgr_Test : MonoBehaviour {
+	public class ABManager_Test : MonoBehaviour {
 
 		//场景名称
 		private string _SceneName = "???";
@@ -35,7 +35,7 @@ namespace SABFW {
 
 		void Start() {
 			//调用AB包（连锁智能调用AB包集合）
-			StartCoroutine(AssetBundleMgr.GetInstance().LoadAssetBundlePack(_SceneName, _ABName1, LoadAllABComplete));
+			StartCoroutine(ABManager.Instance.LoadAssetBundle(_SceneName, _ABName1, LoadAllABComplete));
 		}
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace SABFW {
 			UnityEngine.Object tempObj = null;
 
 			//提取资源
-			tempObj =  AssetBundleMgr.GetInstance().LoadAsset(_SceneName, _ABName1, _AssetName);
+			tempObj =  ABManager.Instance.LoadAsset(_SceneName, _ABName1, _AssetName);
 			//克隆资源
 			if (tempObj != null)
 				Instantiate(tempObj);
@@ -57,7 +57,7 @@ namespace SABFW {
 		/// </summary>
 		void Update(){
 			if (Input.GetKeyDown(KeyCode.A)) {
-				AssetBundleMgr.GetInstance().DisposeAllAssets(_SceneName);
+				ABManager.Instance.DisposeAllInScene(_SceneName);
 			}
 		}
 

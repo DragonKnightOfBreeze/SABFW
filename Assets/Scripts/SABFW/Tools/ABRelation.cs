@@ -1,17 +1,9 @@
 ﻿/*******
  * ［标题］
- * 项目：AssetBundle框架设计
+ * 项目：简单的AssetBundle框架
  * 作者：微风的龙骑士 风游迩
  * 
- * 辅助类：AB包关系类
- * 
- * ［功能］
- * 
- * 
- * ［思路］
- *  
- * 
- * ［用法］
+ * AB包关系类
  * 
  */
 using System;
@@ -23,17 +15,23 @@ namespace SABFW {
 	/// </summary>
 	public class ABRelation {
 
+		#region ［字段］
+
 		/// <summary>当前AssetBundle名称</summary>
 		public string ABName;
 		/// <summary>所有依赖包的集合</summary>
-		private List<string> _ABDependenceList;
+		private readonly List<string> _ABDependenceList;
 		/// <summary>所有引用包的集合</summary>
-		private List<string> _ABReferenceList;
+		private readonly List<string> _ABReferenceList;
+
+		#endregion
 
 
-		public ABRelation(string abName){
+		#region ［构造器］
+
+		public ABRelation(string abName) {
 			if (string.IsNullOrEmpty(abName))
-				throw new ArgumentException(nameof(abName));
+				throw new ArgumentException(FWDefine.PREFIX + nameof(abName));
 
 			//开始初始化
 			ABName = abName;
@@ -41,6 +39,7 @@ namespace SABFW {
 			_ABReferenceList = new List<string>();
 		}
 
+		#endregion
 
 
 		#region ［依赖关系处理］
@@ -50,7 +49,7 @@ namespace SABFW {
 		/// </summary>
 		public bool AddABDependence(string abName){
 			if (string.IsNullOrEmpty(abName))
-				throw new ArgumentException(nameof(abName));
+				throw new ArgumentException(FWDefine.PREFIX + nameof(abName));
 
 			if (_ABDependenceList.Contains(abName))
 				return false;
@@ -64,7 +63,7 @@ namespace SABFW {
 		/// </summary>
 		public bool RemoveDependence(string abName){
 			if (string.IsNullOrEmpty(abName))
-				throw new ArgumentException(nameof(abName));
+				throw new ArgumentException(FWDefine.PREFIX + nameof(abName));
 
 			if (!_ABDependenceList.Contains(abName))
 				return false;
@@ -97,7 +96,7 @@ namespace SABFW {
 		/// </summary>
 		public bool AddABReference(string abName) {
 			if (string.IsNullOrEmpty(abName))
-				throw new ArgumentException(nameof(abName));
+				throw new ArgumentException(FWDefine.PREFIX + nameof(abName));
 
 			if (_ABReferenceList.Contains(abName))
 				return false;
@@ -111,7 +110,7 @@ namespace SABFW {
 		/// </summary>
 		public bool RemoveReference(string abName) {
 			if (string.IsNullOrEmpty(abName))
-				throw new ArgumentException(nameof(abName));
+				throw new ArgumentException(FWDefine.PREFIX + nameof(abName));
 
 			if (!_ABReferenceList.Contains(abName))
 				return false;
