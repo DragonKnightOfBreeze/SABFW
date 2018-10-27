@@ -61,19 +61,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SABFW\Global\GameEnum.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Manager\IABManifestManager.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Manager\ABManager.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Loader\AssetLoader.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Loader\MultiABLoader.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Loader\SingleABLoader.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Manager\IABManager.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Test\ABManager_Test.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Test\SingleABLoader_Test.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Manager\ABManifestManager.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Tools\ABRelation.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Global\FWDefine.cs" />
-    <Compile Include="Assets\Scripts\SABFW\Tools\PathTools.cs" />
+    <Compile Include="Assets\Scripts\Framework\Global\FrameDelegate.cs" />
+    <Compile Include="Assets\Scripts\Framework\Global\FrameEnum.cs" />
+    <Compile Include="Assets\Scripts\Framework\IManager\IAssetBundleMgr.cs" />
+    <Compile Include="Assets\Scripts\Framework\IManager\IManifestMgr.cs" />
+    <Compile Include="Assets\Scripts\Framework\Internal\AssetLoader.cs" />
+    <Compile Include="Assets\Scripts\Framework\Internal\BundleRelation.cs" />
+    <Compile Include="Assets\Scripts\Framework\Internal\MultiBundleLoader.cs" />
+    <Compile Include="Assets\Scripts\Framework\Internal\PathTools.cs" />
+    <Compile Include="Assets\Scripts\Framework\Internal\SingleBundleLoader.cs" />
+    <Compile Include="Assets\Scripts\Framework\Manager\AssetBundleMgr.cs" />
+    <Compile Include="Assets\Scripts\Framework\Manager\ManifestMgr.cs" />
+    <Compile Include="Assets\Scripts\Framework\_Test\BundleManager_Test.cs" />
+    <Compile Include="Assets\Scripts\Framework\_Test\SingleBundleLoader_Test.cs" />
+    <Compile Include="Assets\Scripts\Framework\Global\FrameConst.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/［My Documents］/My Projects/Unity Projects/Tutorial/AssetBundleProject/SABFW/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
@@ -631,16 +632,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\ABResources\CommonScene\Audios\" />
-    <Folder Include="Assets\ABResources\CommonScene\Prefabs\" />
-    <Folder Include="Assets\ABResources\CommonScene\Textures\" />
-    <Folder Include="Assets\ABResources\Scene_2\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Assets\ABResources\CommonScene.meta" />
-    <None Include="Assets\ABResources\CommonScene\Audios.meta" />
-    <None Include="Assets\ABResources\CommonScene\Prefabs.meta" />
-    <None Include="Assets\ABResources\CommonScene\Textures.meta" />
     <None Include="Assets\ABResources\Scene_1.meta" />
     <None Include="Assets\ABResources\Scene_1\Materials.meta" />
     <None Include="Assets\ABResources\Scene_1\Materials\New Material.mat" />
@@ -654,16 +646,21 @@
     <None Include="Assets\ABResources\Scene_2.meta" />
     <None Include="Assets\Documents\TODO.md" />
     <None Include="Assets\Documents\步骤流程图.png.meta" />
-    <None Include="Assets\Documents\笔记.md" />
+    <None Include="Assets\Documents\笔记（下）.md" />
     <None Include="Assets\Documents\笔记.md.meta" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ABResources\Scene_1\Audios\button.mp3" />
+    <Content Include="Assets\ABResources\Scene_1\Audios\button.mp3.meta" />
+    <Content Include="Assets\ABResources\Scene_1\Audios\getitem.mp3" />
+    <Content Include="Assets\ABResources\Scene_1\Audios\getitem.mp3.meta" />
     <Content Include="Assets\ABResources\Scene_1\Texture\Floor.jpg" />
     <Content Include="Assets\ABResources\Scene_1\Texture\Path %28Rocky%29.jpg" />
     <Content Include="Assets\ABResources\Scene_1\Texture\unitychan_tile3.png" />
     <Content Include="Assets\ABResources\Scene_1\Texture\unitychan_tile6.png" />
     <Content Include="Assets\ABResources\Scene_1\Texture\WhileFloor.jpg" />
     <Content Include="Assets\Documents\步骤流程图.png" />
+    <Content Include="Assets\Documents\笔记（上）.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
